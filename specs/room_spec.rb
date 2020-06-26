@@ -23,7 +23,7 @@ class TestRoom < Minitest::Test
         @playlist = [@song1, @song2, @song3]
 
 
-        @room = Room.new("Cool Vibes", @playlist)
+        @room = Room.new("Cool Vibes", @playlist, 6, 5)
     end
 
     def test_name()
@@ -78,6 +78,10 @@ class TestRoom < Minitest::Test
         @room.check_in(@guest7)
         assert_equal("This room is currently full", @room.check_in(@guest7))
         assert_equal(6, @room.guest_number())
+    end
+
+    def test_fee()
+        assert_equal(5, @room.fee)
     end
 
 end
