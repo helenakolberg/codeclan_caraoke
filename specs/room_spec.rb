@@ -12,7 +12,6 @@ class TestRoom < Minitest::Test
         @guest1 = Guest.new("Tomek")
         @guest2 = Guest.new("Alina")
         @guest3 = Guest.new("Rudy")
-        @guests = [@guest1, @guest2, @guest3]
 
         @song1 = Song.new("Ring Of Fire", "Johnny Cash")
         @song2 = Song.new("Take Me Home, Country Roads", "John Denver")
@@ -20,32 +19,32 @@ class TestRoom < Minitest::Test
         @playlist = [@song1, @song2, @song3]
 
 
-        @room = Room.new("Cool Vibes", @guests, @playlist)
+        @room = Room.new("Cool Vibes", @playlist)
     end
 
     def test_name()
         assert_equal("Cool Vibes", @room.name)
     end
 
-    def test_guests()
-        assert_equal([@guest1, @guest2, @guest3], @room.guests)
-    end
-
     def test_playlist()
         assert_equal([@song1, @song2, @song3], @room.playlist)
     end
 
-    def test_how_many_guests()
-        assert_equal(3, @room.guest_number)
+    def test_room_starts_empty()
+        assert_equal(0, @room.guest_number)
     end
 
     def test_check_guests_in()
-        guest4 = Guest.new("Jane")
-        @room.check_in(guest4)
-        assert_equal(4, @room.guest_number)
+        @room.check_in(@guest1)
+        @room.check_in(@guest2)
+        @room.check_in(@guest3)
+        assert_equal(3, @room.guest_number)
     end
 
     def test_check_guests_out()
+        @room.check_in(@guest1)
+        @room.check_in(@guest2)
+        @room.check_in(@guest3)
         @room.check_out(@guest3)
         assert_equal(2, @room.guest_number)
     end
