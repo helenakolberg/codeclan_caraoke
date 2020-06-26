@@ -13,14 +13,14 @@ class TestGuest < Minitest::Test
         @song2 = Song.new("Take Me Home, Country Roads", "John Denver")
         @song3 = Song.new("I'm Gonna Be (500 Miles)", "The Proclaimers")
 
-        @guest1 = Guest.new("Jonathan", 100, @song1)
-        @guest2 = Guest.new("Jim", 90, @song3)
+        @guest1 = Guest.new("Juan", 100, @song1)
+        @guest2 = Guest.new("Sandy", 90, @song3)
 
         @room = Room.new("Chill Room", [@song1, @song2], 6, 5)
     end
 
     def test_name()
-        assert_equal("Jonathan", @guest1.name)
+        assert_equal("Juan", @guest1.name)
     end
 
     def test_money()
