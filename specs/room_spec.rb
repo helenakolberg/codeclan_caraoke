@@ -35,4 +35,8 @@ class TestRoom < Minitest::Test
         assert_equal([@song1, @song2, @song3], @room.playlist)
     end
 
+    def test_how_many_guests()
+        assert_equal(3, @room.guest_number)
+    end
+
 end

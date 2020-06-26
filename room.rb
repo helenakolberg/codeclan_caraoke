@@ -8,4 +8,8 @@ class Room
         @playlist = playlist
     end
 
+    def guest_number()
+        return @guests.length
+    end
+
 end
