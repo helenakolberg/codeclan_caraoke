@@ -14,4 +14,8 @@ class TestSong < Minitest::Test
         assert_equal("Shake It Off", @song.name)
     end
 
+    def test_artist()
+        assert_equal("Taylor Swift", @song.artist)
+    end
+
 end
