@@ -7,8 +7,13 @@ class Bar
         @tab = tab
     end
 
-    def drink_types_available
+    def drink_types_available()
         return @drinks.length
+    end
+
+    def charge_guest_enry_fee(guest, room)
+        guest.remove_money(room.fee)
+        @tab += room.fee
     end
 
 end
