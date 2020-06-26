@@ -14,8 +14,11 @@ class Room
     end
 
     def check_in(guest)
-        @guests << guest if (guest_number < @capacity)
-        return "This room is currently full"
+        if (guest_number < @capacity)
+            @guests << guest 
+        else
+            return "This room is currently full"
+        end
     end
 
     def check_out(guest)
