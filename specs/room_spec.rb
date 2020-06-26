@@ -27,4 +27,8 @@ class TestRoom < Minitest::Test
         assert_equal(1, @room.number)
     end
 
+    def test_guests()
+        assert_equal([@guest1, @guest2, @guest3], @room.guests)
+    end
+
 end
