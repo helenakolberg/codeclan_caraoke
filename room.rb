@@ -20,4 +20,8 @@ class Room
         @guests.delete(guest)
     end
 
+    def playlist_length()
+        return @playlist.length
+    end
+
 end
