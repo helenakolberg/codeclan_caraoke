@@ -12,4 +12,8 @@ class Guest
         @money -= amount
     end
 
+    def favourite_song_played
+        return "THAT'S MY SONG!!!"
+    end
+
 end

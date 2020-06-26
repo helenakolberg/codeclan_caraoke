@@ -87,4 +87,5 @@ class TestRoom < Minitest::Test
         assert_equal(5, @room.fee)
     end
 
+
 end

@@ -4,29 +4,40 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 require_relative('../guest')
 require_relative('../song')
+require_relative('../room')
 
 class TestGuest < Minitest::Test
 
     def setup()
-        @song = Song.new("Born This Way", "Lady Gaga")
-        @guest = Guest.new("Jonathan", 100, @song)
+        @song1 = Song.new("Born This Way", "Lady Gaga")
+        @song2 = Song.new("Take Me Home, Country Roads", "John Denver")
+        @song3 = Song.new("I'm Gonna Be (500 Miles)", "The Proclaimers")
+
+        @guest1 = Guest.new("Jonathan", 100, @song1)
+        @guest2 = Guest.new("Jim", 90, @song3)
+
+        @room = Room.new("Chill Room", [@song1, @song2], 6, 5)
     end
 
     def test_name()
-        assert_equal("Jonathan", @guest.name)
+        assert_equal("Jonathan", @guest1.name)
     end
 
     def test_money()
-        assert_equal(100, @guest.money)
+        assert_equal(100, @guest1.money)
     end
 
     def test_song()
-        assert_equal(@song, @guest.favourite_song)
+        assert_equal(@song1, @guest1.favourite_song)
     end
 
     def test_remove_money()
-        @guest.remove_money(30)
-        assert_equal(70, @guest.money)
+        @guest1.remove_money(30)
+        assert_equal(70, @guest1.money)
+    end
+
+    def test_favourite_song_played()
+        assert_equal("THAT'S MY SONG!!!", @guest1.favourite_song_played)
     end
 
 end

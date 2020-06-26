@@ -16,7 +16,7 @@ class Room
 
     def check_in(guest)
         if (guest_number < @capacity)
-            @guests << guest 
+            @guests << guest
         else
             return "This room is currently full"
         end
@@ -33,5 +33,6 @@ class Room
     def add_song(song)
         @playlist << song
     end
+
 
 end
