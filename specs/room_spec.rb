@@ -39,4 +39,10 @@ class TestRoom < Minitest::Test
         assert_equal(3, @room.guest_number)
     end
 
+    def test_check_guests_in()
+        guest4 = Guest.new("Jane")
+        @room.check_in(guest4)
+        assert_equal(4, @room.guest_number)
+    end
+
 end
