@@ -20,11 +20,11 @@ class TestRoom < Minitest::Test
         @playlist = [@song1, @song2, @song3]
 
 
-        @room = Room.new(1, @guests, @playlist)
+        @room = Room.new("Cool Vibes", @guests, @playlist)
     end
 
-    def test_number()
-        assert_equal(1, @room.number)
+    def test_name()
+        assert_equal("Cool Vibes", @room.name)
     end
 
     def test_guests()
