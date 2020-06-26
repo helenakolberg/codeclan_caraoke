@@ -54,4 +54,10 @@ class TestRoom < Minitest::Test
         assert_equal(3, @room.playlist_length)
     end
 
+    def test_add_song_to_playlist()
+        song4 = Song.new("A Thousand Miles", "Vanessa Carlton")
+        @room.add_song(song4)
+        assert_equal(4, @room.playlist_length)
+    end
+
 end
