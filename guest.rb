@@ -12,8 +12,8 @@ class Guest
         @money -= amount
     end
 
-    def favourite_song_played
-        return "THAT'S MY SONG!!!"
+    def favourite_song_played(room)
+        return "THAT'S MY SONG!!!" if room.playlist.include?(@favourite_song)
     end
 
 end
