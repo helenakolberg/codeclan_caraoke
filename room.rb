@@ -6,7 +6,7 @@ class Room
         @name = name
         @playlist = playlist
         @guests = []
-        @capacity = 10
+        @capacity = 6
     end
 
     def guest_number()
@@ -14,7 +14,8 @@ class Room
     end
 
     def check_in(guest)
-        @guests << guest
+        @guests << guest if (guest_number < @capacity)
+        return "This room is currently full"
     end
 
     def check_out(guest)
