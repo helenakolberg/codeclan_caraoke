@@ -59,4 +59,8 @@ class TestRoom < Minitest::Test
         assert_equal(4, @room.playlist_length)
     end
 
+    def test_capacity()
+        assert_equal(10, @room.capacity)
+    end
+
 end
