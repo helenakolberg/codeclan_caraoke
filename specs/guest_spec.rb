@@ -40,4 +40,8 @@ class TestGuest < Minitest::Test
         assert_equal("THAT'S MY SONG!!!", @guest1.favourite_song_played(@room))
     end
 
+    def test_favourite_song_not_played()
+        assert_nil(@guest2.favourite_song_played(@room))
+    end
+
 end
