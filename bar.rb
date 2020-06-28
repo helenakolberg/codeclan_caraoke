@@ -8,7 +8,7 @@ class Bar
         @tab = tab
     end
 
-    def drink_types_available()
+    def number_of_drink_types_available()
         return @drinks.length
     end
 

@@ -27,7 +27,7 @@ class TestBar < Minitest::Test
     end
 
     def test_drinks
-        assert_equal(3, @bar.drink_types_available)
+        assert_equal(3, @bar.number_of_drink_types_available)
     end
 
     def test_tab
