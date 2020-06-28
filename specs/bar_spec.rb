@@ -30,11 +30,19 @@ class TestBar < Minitest::Test
 
     def test_charge_guest_entry_fee
         song = Song.new("Y.M.C.A.", "Village People")
-        guest = Guest.new("Sam", 200, song)
+        guest = Guest.new("Jane", 200, song)
         room = Room.new("Mega Hits", [song], 6, 5)
         @bar.charge_guest_enry_fee(guest, room)
         assert_equal(195, guest.money)
         assert_equal(105, @bar.tab)
+    end
+
+    def test_sell_guest_drink
+        song = Song.new("Respect", "Aretha Franklin")
+        guest = Guest.new("Ruben", 50, song)
+        @bar.sell_guest_drink(guest, @drink1)
+        assert_equal(42, guest.money)
+        assert_equal(108, @bar.tab)
     end
 
 end

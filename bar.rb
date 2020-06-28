@@ -16,4 +16,9 @@ class Bar
         @tab += room.fee
     end
 
+    def sell_guest_drink(guest, drink)
+        guest.remove_money(drink.price)
+        @tab += drink.price
+    end
+
 end
