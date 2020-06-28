@@ -1,9 +1,10 @@
 class Bar
 
-    attr_reader :drinks, :tab
+    attr_reader :drinks, :snacks, :tab
     
-    def initialize(drinks, tab)
+    def initialize(drinks, snacks, tab)
         @drinks = drinks
+        @snacks = snacks
         @tab = tab
     end
 
@@ -19,6 +20,11 @@ class Bar
     def sell_guest_drink(guest, drink)
         guest.remove_money(drink.price)
         @tab += drink.price
+    end
+
+    def sell_guest_snack(guest, snack)
+        guest.remove_money(snack.price)
+        @tab += snack.price
     end
 
 end
